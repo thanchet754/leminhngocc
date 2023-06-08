@@ -199,25 +199,6 @@ void InMin(SV *sv, int n)
     }
 }
 
-// hàm sắp xếp sinh viên theo mã số sinh viên
-void SapXepMSSV(SV *sv, int n)
-{
-    dem=0;
-    cout <<"Danh sach sinh vien theo ma so tang dan: "<<endl;
-    TieuDe();
-    for(int i=0;i<n-1;i++)
-    {
-        for(int j=i+1;j<n;j++)
-        {
-            if(sv[i].mssv > sv[j].mssv )
-            {
-                swap(sv[i], sv[j]);
-            }
-        }
-    }
-    XuatSV(sv, n);
-}
-
 // ham nhap so luong sinh vien
 void NhapSL(int &n)
 {
@@ -260,7 +241,7 @@ void Menu(){
     cout<<" 5. Hien thi thong tin nhung sinh vien co diem trung binh cao nhat"<<"\n";
     cout<<" 6. Hien thi thong tin nhung sinh vien co diem trung binh thap nhat"<<"\n"; 
     cout<<" 7. Tim sinh vien boi ma so sinh vien"<<"\n"; 
-    cout<<" 8. Sap xep danh sach sinh vien theo ma so sinh vien tang dan"<<"\n";
+    
     cout<<" 0. Thoat"<<endl;
 }
 
@@ -313,10 +294,6 @@ int main()
                 break;
             case 7:
                 TimKiem(sv, n);
-                Press();
-                break;
-            case 8: 
-                SapXepMSSV(sv, n);
                 Press();
                 break;
            
